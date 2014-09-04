@@ -3,7 +3,7 @@
 	"tags": {
 		"allowUnknownTags" : true
 	},
-	"plugins": ["plugins/markdown", "tags/sig"],
+	"plugins": ["plugins/markdown", "tags/sig", "tags/category"],
 	"templates": {
 		"cleverLinks": true,
 		"monospaceLinks": true,
