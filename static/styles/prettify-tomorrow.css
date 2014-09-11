@@ -9,11 +9,11 @@
 @media screen {
   /* string content */
   .str {
-    color: #718c00; }
+    color: #00a33f; }
 
   /* a keyword */
   .kwd {
-    color: #8959a8; }
+    color: #a535ae; }
 
   /* a comment */
   .com {
@@ -21,27 +21,27 @@
 
   /* a type name */
   .typ {
-    color: #4271ae; }
+    color: #21439c; }
 
   /* a literal value */
   .lit {
-    color: #f5871f; }
+    color: #ff5600; }
 
   /* punctuation */
   .pun {
-    color: #4d4d4c; }
+    color: #3d3d3c; }
 
   /* lisp open bracket */
   .opn {
-    color: #4d4d4c; }
+    color: #3d3d3c; }
 
   /* lisp close bracket */
   .clo {
-    color: #4d4d4c; }
+    color: #3d3d3c; }
 
   /* a markup tag name */
   .tag {
-    color: #c82829; }
+    color: #990000; }
 
   /* a markup attribute name */
   .atn {
@@ -53,15 +53,15 @@
 
   /* a declaration */
   .dec {
-    color: #f5871f; }
+    color: #ff5600; }
 
   /* a variable name */
   .var {
-    color: #c82829; }
+    color: #990000; }
 
   /* a function name */
   .fun {
-    color: #4271ae; } }
+    color: #21439c; } }
 /* Use higher contrast and text-weight for printable form. */
 @media print, projection {
   .str {
