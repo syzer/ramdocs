@@ -94,10 +94,7 @@ li {
 .navigation li.item ul > li {
   font-size: 0.7em;
   padding-left: 8px;
-}
-.navigation li.item ul > li > a {
-  padding: 4px;
-  display: block;
+  margin-top: 2px;
 }
 .navigation li.item .itemMembers {
   display: none;
@@ -192,6 +189,9 @@ li {
 }
 .main .description p {
   font-size: 13px;
+}
+.tag-source {
+  font-weight: normal
 }
 .main .tag-source {
   font-size: 12px;
