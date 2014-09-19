@@ -41,7 +41,7 @@ module.exports = function (grunt) {
             },
 
             jscopy: {
-                files: ['static/scripts/main.js'],
+                files: ['static/scripts/main.js', 'src/*.js'],
                 tasks: ['copy:js']
             },
 
@@ -94,8 +94,16 @@ module.exports = function (grunt) {
             },
 
             js: {
-                src: 'static/scripts/main.js',
-                dest: DEMO_PATH + '/scripts/main.js'
+                files: [
+                    {
+                        src: 'static/scripts/main.js',
+                        dest: DEMO_PATH + '/scripts/main.js'
+                    },
+                    {
+                        src: 'src/ramda.js',
+                        dest: DEMO_PATH + '/scripts/ramda.js'
+                    }
+                ]
             }
         }
     });
@@ -124,6 +132,7 @@ module.exports = function (grunt) {
         'less',
         'clean',
         'curl-dir:ramda',
+        'copy:js',
         'jsdoc'
     ]);
 };
