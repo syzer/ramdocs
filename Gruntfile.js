@@ -135,4 +135,10 @@ module.exports = function (grunt) {
         'copy:js',
         'jsdoc'
     ]);
+
+    grunt.registerTask('localdocs', 'Create ramda documentations from local files (no downloads)', [
+        'less',
+        'jsdoc'
+    ]);
+
 };

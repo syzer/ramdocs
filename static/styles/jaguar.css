@@ -190,9 +190,6 @@ li {
 .main .description p {
   font-size: 13px;
 }
-.tag-source {
-  font-weight: normal
-}
 .main .tag-source {
   font-size: 12px;
 }
@@ -329,6 +326,78 @@ li {
 .main article ul > li {
   margin-bottom: 5px;
   list-style-type: disc;
+}
+h4 div.sigBox {
+  vertical-align: top;
+  margin-left: 2em;
+  display: inline-block;
+  white-space: pre;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+h4 div.sigBox code {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+.main dd div.description {
+  margin-top: 1.5em;
+}
+.main dd div.wrap {
+  margin-left: 1em;
+  display: none;
+  border-left: 1px solid #ccc;
+  padding-left: 1em;
+}
+.main dd.expanded div.wrap {
+  display: block;
+}
+.main table .type {
+  width: 120px;
+}
+.main h4.name {
+  cursor: pointer;
+}
+.main h4.name span.glyphicon {
+  vertical-align: top;
+  color: #999;
+  margin: 0 .5em 0 0;
+}
+.nav > li > a {
+  padding: 4px 8px;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #428bca;
+  color: #fff;
+  border: 1px solid #428bca;
+  border-bottom-color: transparent;
+}
+.nav-tabs {
+  border-bottom: none;
+  margin-left: 6px;
+}
+#a_z {
+  height: 805px;
+  margin: 0 3px;
+  padding-left: 1px;
+  border: 1px solid #428bca;
+  border-radius: 6px;
+  width: auto;
+}
+.main table td,
+.main table td {
+  padding: 0 3px;
+}
+.main h5 {
+  font-family: "jaf-bernino-sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+.main td.name code .main td.type span,
+.main td.description p {
+  font-size: 12px;
+}
+h3.subsection-title {
+  display: none;
 }
 footer {
   margin: 15px 0;

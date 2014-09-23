@@ -21,9 +21,9 @@
 			"url": ""
 		},
 		"meta": {
-			"title": "",
-			"description": "",
-			"keyword": ""
+			"title": "Ramda: practical funcitonal javascript",
+			"description": "Ramda: a practical functional library for Javascript programmers.",
+			"keyword": "ramda, javascript, functional, fp, curry, compose"
 		},
 		"linenums": false
 	},
