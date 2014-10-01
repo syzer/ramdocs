@@ -209,14 +209,29 @@ function buildNav(members) {
 
     if (members.namespaces.length) {
         _.each(members.namespaces, function (v) {
+            var members = find({
+                kind: 'function',
+                memberof: v.longname
+            });
+            var catList =  (members || []).map(function(mbr) {return mbr.categories || [];});
+            var categoryNames = catList.reduce(function(soFar, cats) {
+                (cats || []).forEach(function(cat) {soFar[cat] = [];});
+                return soFar;
+            }, {} );
+            var categories = members.reduce(function(catNames, mbr) {
+                (mbr.categories || []).forEach(function(cat) {
+                    catNames[cat].push({name: mbr.name, longname: mbr.longname});
+                });
+                return catNames;
+            }, categoryNames);
+
+
+
             nav.push({
                 type: 'namespace',
                 longname: v.longname,
                 name: v.name,
-                members: find({
-                    kind: 'member',
-                    memberof: v.longname
-                }),
+                members: members,
                 methods: find({
                     kind: 'function',
                     memberof: v.longname
@@ -228,7 +243,8 @@ function buildNav(members) {
                 events: find({
                     kind: 'event',
                     memberof: v.longname
-                })
+                }),
+                categories: categories
             });
         });
     }

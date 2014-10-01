@@ -54,15 +54,23 @@
 <script src="scripts/linenumber.js"></script>
 <script src="scripts/main.js"></script>
 <script src="scripts/ramda.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
 <script>
-  R.installTo(this);
-  $(document).ready(function() {
-    $("body").on("click", ".nameContainer", function(evt) {
-        var $div = $(this).toggleClass("expanded");
-        $div.find("span.glyphicon").toggleClass("glyphicon-plus-sign").toggleClass("glyphicon-minus-sign");
-        $div.parent().next("dd").toggleClass("expanded");
+    R.installTo(this);
+    $(document).ready(function() {
+        $("body").on("click", ".nameContainer", function(evt) {
+            var $div = $(this).toggleClass("expanded");
+            $div.find("span.glyphicon").toggleClass("glyphicon-plus-sign").toggleClass("glyphicon-minus-sign");
+            $div.parent().next("dd").toggleClass("expanded");
+        });
+
+        $('#navtabs a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show'); // doesn't acutally do anything....
+        });
+
+        $('#navtabs a:active').tab('show')
     });
-  });
 </script>
 </body>
 </html>
