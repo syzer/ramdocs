@@ -3,46 +3,45 @@ var self = this;
 ?><div class="navigation">
     <h3 class="applicationName"><a href="index.html"><?js= env.conf.templates.applicationName ?></a></h3>
     <div class="search">
-        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentation">
     </div>
-    <ul class="list">
-    <?js
-    this.nav.forEach(function (item) {
-    ?><li class="item" data-name="<?js= item.longname ?>">
-            <ul class="members itemMembers"><?js
-            if (item.members.length) {
-                item.members.forEach(function (v) {
-            ?><li data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li>
-            <?js
-                });
-            }
-            ?></ul>
-            <ul class="typedefs itemMembers"><?js
-            if (item.typedefs.length) {
-                item.typedefs.forEach(function (v) {
-            ?>
-                <li data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li><?js
-                });
-            }
-            ?>
-            </ul>
-            <ul class="methods itemMembers"><?js
-            if (item.methods.length) {
-                item.methods.forEach(function (v) {
-            ?>
-                <li data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li><?js
-                });
-            }
-            ?>
-            </ul>
-            <ul class="events itemMembers"><?js
-            if (item.events.length) {
-                item.events.forEach(function (v) {
-            ?>
-                <li data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li><?js
-                });
-            }
-            ?></ul>
-        </li><?js }); ?>
+    <ul id="navtabs" class="nav nav-tabs" role="tablist">
+        <li><a href="#categories" id="catLink" role="tab" data-toggle="tab">Categories</a></li>
+        <li class="active"><a id="azLink" href="#a_z" role="tab" data-toggle="tab">A-Z</a></li>
     </ul>
+    <div class="tab-content">
+        <ul class="list tab-pane active" id="categories">
+        <?js
+        this.nav.forEach(function (item) {
+        ?><li class="item" data-name="<?js= item.longname ?>">
+            <ul class="methods itemMembers"><?js
+            if (item.categories.length) {
+                item.categories.forEach(function (c) {
+            ?>
+              <li>
+                <h5 class="title"><?js= c.name ?></h5>
+                <ul><?js c.methods.forEach(function(m) { ?>
+                   <li data-name="<?js= m.longname ?>"><?js= self.linkto(m.longname, m.name) ?></li><?js });?>
+                </ul>
+              </li><?js })?>
+            <?js } ?>
+            </ul>
+          </li><?js })?>
+        </ul>
+        <ul class="list tab-pane" id="a_z">
+        <?js
+        this.nav.forEach(function (item) {
+        ?><li class="item" data-name="<?js= item.longname ?>">
+                <ul class="methods itemMembers"><?js
+                if (item.methods.length) {
+                    item.methods.forEach(function (v) {
+                ?>
+                    <li data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li><?js
+                    });
+                }
+                ?>
+                </ul>
+            </li><?js }); ?>
+        </ul>
+    </div>
 </div>
